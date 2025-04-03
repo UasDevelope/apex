@@ -1,3 +1,4 @@
 class Routes {
-  static const HOME = '/home';
+  static get HOME => '/home';
+  static get BOTTOMNAV => "/Nav";
 }

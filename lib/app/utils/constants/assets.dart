@@ -1,12 +1,14 @@
+import 'package:apex/app/utils/helpers/extension.dart';
+
 class AppAssets {
   // Logos (PNG)
   static get logo => "logo".png;
+  static get calender=>"calender".png;
+  static get add=>"add".png;
+  static get dashboard=>"dashboard".png;
+  static get guide=>"guide".png;
+  static get setting=>"setting".png;
+  static get supplement=>"supplement".png;
 }
 
-extension AssetExtensions on String {
-  // PNG File Extension with directory path
-  String get png => "assets/images/$this.png";
 
-  // JPEG File Extension with directory path
-  String get jpeg => "assets/images/$this.jpeg";
-}
