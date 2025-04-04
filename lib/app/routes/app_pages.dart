@@ -1,9 +1,15 @@
-import 'package:apex/app/controllers/BottomNavController.dart';
+import 'package:apex/app/views/auth/login.dart';
+import 'package:apex/app/views/auth/signup.dart';
 import 'package:apex/app/views/bottom_nav_view.dart';
+import 'package:apex/app/views/guide/guide_detail.dart';
+import 'package:apex/app/views/splash/splash_screen.dart';
+import 'package:apex/app/views/supplements/add_supplements.dart';
 import 'package:apex/app_binding.dart';
 import 'package:get/get.dart';
-import '../views/home_view.dart';
+
 import '../bindings/home_binding.dart';
+import '../views/home/home_view.dart';
+import '../views/profile/notification.dart';
 import 'app_routes.dart';
 
 class AppPages {
@@ -16,6 +22,36 @@ class AppPages {
     GetPage(
       name: Routes.BOTTOMNAV,
       page: () => BottomNavView(),
+      binding: AppBinding(),
+    ),
+    GetPage(
+      name: Routes.notification,
+      page: () => NotificationScreen(),
+      binding: AppBinding(),
+    ),
+    GetPage(
+      name: Routes.addSupplements,
+      page: () => AddSupplements(),
+      binding: AppBinding(),
+    ),
+    GetPage(
+      name: Routes.login,
+      page: () => LoginScreen(),
+      binding: AppBinding(),
+    ),
+    GetPage(
+      name: Routes.signup,
+      page: () => SignUpScreen(),
+      binding: AppBinding(),
+    ),
+    GetPage(
+      name: Routes.splashScreen,
+      page: () => SplashScreen(),
+      binding: AppBinding(),
+    ),
+    GetPage(
+      name: Routes.guideDetail,
+      page: () => GuideDetail(),
       binding: AppBinding(),
     ),
   ];

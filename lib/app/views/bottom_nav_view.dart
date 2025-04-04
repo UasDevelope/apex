@@ -1,30 +1,38 @@
 import 'package:apex/app/utils/constants/color.dart';
+import 'package:apex/app/views/calender/calender_view.dart';
+import 'package:apex/app/views/guide/guide_view.dart';
+import 'package:apex/app/views/profile/profile_screen.dart';
+import 'package:apex/app/views/supplements/supplements_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../controllers/BottomNavController.dart';
 import '../utils/constants/assets.dart';
 import '../utils/constants/strings.dart';
-import 'home_view.dart';
-import 'profile_screen.dart';
-import 'settings_screen.dart';
+import 'home/home_view.dart';
 
 class BottomNavView extends StatelessWidget {
   final controller = Get.find<BottomNavController>();
 
-  final List<Widget> pages = [HomeView(), ProfileScreen(), SettingsScreen()];
+  final List<Widget> pages = [
+    HomeView(),
+    CalenderView(),
+    SupplementsView(),
+    GuideView(),
+    ProfileScreen()
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Obx(() => pages[controller.selectedIndex.value]),
-
       bottomNavigationBar: Obx(
         () => Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
             boxShadow: [
               BoxShadow(
-                color: Colors.black.withOpacity(0.1),
+                color: Colors.black.withValues(alpha: 0.1),
                 blurRadius: 10,
                 spreadRadius: 2,
               ),
@@ -71,10 +79,9 @@ class BottomNavView extends StatelessWidget {
             iconPath,
             width: controller.selectedIndex.value == index ? 32 : 24,
             height: controller.selectedIndex.value == index ? 32 : 24,
-            color:
-                controller.selectedIndex.value == index
-                    ? AppColors.appColor
-                    : Colors.grey,
+            color: controller.selectedIndex.value == index
+                ? AppColors.appColor
+                : Colors.grey,
           ),
         ),
       ),
